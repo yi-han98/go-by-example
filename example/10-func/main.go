@@ -2,8 +2,9 @@ package main
 
 import "fmt"
 
-func add(a int, b int) int {
-	return a + b
+func add(a int, b int) (res int) {
+	res = a + b
+	return
 }
 
 func add2(a, b int) int {

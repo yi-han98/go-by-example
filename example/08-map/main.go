@@ -14,6 +14,10 @@ func main() {
 	r, ok := m["unknow"]
 	fmt.Println(r, ok) // 0 false
 
+	for i, v := range m {
+		fmt.Println(i, v)
+	}
+
 	delete(m, "one")
 
 	m2 := map[string]int{"one": 1, "two": 2}
