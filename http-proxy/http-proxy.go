@@ -38,7 +38,7 @@ func handle(client net.Conn) {
 
 	// 用来存放客户端数据的缓冲区
 	var b [1024]byte
-	//从客户端获取数据
+	// 从客户端获取数据
 	n, err := client.Read(b[:])
 	if err != nil {
 		log.Println(err)
@@ -65,20 +65,20 @@ func handle(client net.Conn) {
 		}
 	}
 
-	//获得了请求的host和port，向服务端发起tcp连接
+	// 获得了请求的host和port，向服务端发起tcp连接
 	server, err := net.Dial("tcp", address)
 	if err != nil {
 		log.Println(err)
 		return
 	}
-	//如果使用https协议，需先向客户端表示连接建立完毕
+	// 如果使用https协议，需先向客户端表示连接建立完毕
 	if method == "CONNECT" {
 		fmt.Fprint(client, "HTTP/1.1 200 Connection established\r\n\r\n")
 	} else { //如果使用http协议，需将从客户端得到的http请求转发给服务端
 		server.Write(b[:n])
 	}
 
-	//将客户端的请求转发至服务端，将服务端的响应转发给客户端。io.Copy为阻塞函数，文件描述符不关闭就不停止
+	// 将客户端的请求转发至服务端，将服务端的响应转发给客户端。io.Copy为阻塞函数，文件描述符不关闭就不停止
 	go io.Copy(server, client)
 	io.Copy(client, server)
 }
