@@ -15,7 +15,7 @@ func main() {
 	fmt.Println("Please input your guess")
 	for {
 		var guess int
-		_, err := fmt.Scanf("%d\r\n", &guess)
+		_, err := fmt.Scanf("%d", &guess)
 
 		if err != nil {
 			fmt.Println("Invalid input. Please enter an integer value")
