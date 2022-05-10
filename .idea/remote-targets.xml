@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteTargetsManager">
+    <option name="projectDefaultTargetUuid" value="7e93ba7a-0fdf-4678-9bb0-7d85482eb140" />
+    <targets>
+      <target name="WSL - Ubuntu" type="wsl" uuid="7e93ba7a-0fdf-4678-9bb0-7d85482eb140">
+        <config>
+          <option name="distributionMsId" value="Ubuntu" />
+          <option name="projectRootOnTarget" value="/mnt/c/Program Files/JetBrains/GoLand 2022.1/jbr/bin&#10;/go-by-example" />
+        </config>
+        <ContributedStateBase type="GoLanguageRuntime">
+          <config>
+            <option name="goPath" value="/home/hanyi/go" />
+            <option name="goRoot" value="/usr/local/go/bin/go" />
+            <option name="goVersion" value="go1.18.1 linux/amd64" />
+          </config>
+        </ContributedStateBase>
+      </target>
+    </targets>
+  </component>
+</project>
